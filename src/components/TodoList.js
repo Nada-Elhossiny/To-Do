@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import firebase from '../Firebase'
+import Todo from './Todo'
 
 function TodoList() {
   const [todoList, setTodoList] = useState([])
@@ -20,7 +21,7 @@ function TodoList() {
   
   return (
     <div className="todo-list">
-      {todoList ? todoList.map((todo) => <h1> {todo.task}</h1>) : null}
+      {todoList ? todoList.map((todo, i) => <Todo todo={ todo } key={ i } />) : null}
     </div>
   )
 }
